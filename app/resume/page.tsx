@@ -1,95 +1,205 @@
+'use client';
+
 export default function ResumePage() {
   return (
-    <section style={{ padding: '2rem' }}>
-      <h1>Resume</h1>
-      <a href="/resume.pdf" download className="download-link">
-        📥 Download My Resume (PDF)
-      </a>
+    <section
+      style={{
+        padding: '4rem 2rem',
+        maxWidth: '900px',
+        margin: '0 auto',
+        color: '#fff',
+        fontFamily: "'Orbitron', sans-serif",
+        position: 'relative',
+      }}
+    >
+      {/*Title*/}
+      <h1
+        style={{
+          fontSize: '3rem',
+          textAlign: 'center',
+          marginBottom: '1.5rem',
+          animation: 'glowText 3s ease-in-out infinite',
+        }}
+      >
+        🧠 Resume
+      </h1>
 
-    {/* Professional Experience starts here */}
-    <h2>Professional Experience</h2> 
-        {/* into the shadows begins */}
-        <section>
-        <h3>Into the Shadows</h3>
-        <p><em>Jan 2025 - Present</em></p>
-        <ul>
-            <li>First-person stealth game built in Unity, where players navigate dynamic environments to complete objectives undetected.</li>
-            <li>Collaborated in a team of 3 using Kanban methodology.</li>
-            <li>Developed core gameplay systems using C# for scripting.</li>
-            <li>Integrated models from both custom assets and Unity Asset Store.</li>
-            <li>Utilized Unity and supporting tools for game development and deployment.</li>
-        </ul>
-        </section>
-        {/* Into the shadow ends */}
+      {/* Resume */}
+      <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        <a
+          href="/resume.pdf"
+          download
+          style={{
+            display: 'inline-block',
+            padding: '0.75rem 1.5rem',
+            backgroundColor: '#61dafb',
+            color: '#000',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontWeight: 600,
+            transition: 'transform 0.3s, box-shadow 0.3s',
+          }}
+          className="download-btn"
+        >
+          📥 Download My Resume (PDF)
+        </a>
+      </div>
 
-        {/* Money man section begin */}
-        <section>
-        <h3>Money Man</h3>
-        <p><em>Aug 2024 - Dec 2024</em></p>
-        <ul>
-            <li>Personal finance tracking Android app for budgeting, visualizing expenses, and syncing data with Firebase.</li>
-            <li>Worked in a team of 4 using Scrum methodology and collaborated via JIRA.</li>
-            <li>Developed frontend using XML and backend logic in Kotlin.</li>
-            <li>Implemented cloud data storage and user authentication via Firebase.</li>
-            <li>Used Android Studio and GitHub for version control and development.</li>
-        </ul>
-        </section>
-        {/* Money man section ends */}
-    
-    {/* Rare Task Manager begins */}
-    <section>
-    <h3>Rare Task Manager</h3>
-    <p><em>Aug 2024 - Dec 2024</em></p>
-    <ul>
-        <li>Web-based task management tool allowing users to create, track, and categorize tasks using local JSON storage.</li>
-        <li>Collaborated in a team of 5 using Scrum and managed tasks via JIRA.</li>
-        <li>Built frontend using HTML and CSS; local data persisted via JSON.</li>
-        <li>Utilized Visual Studio Code and GitHub for collaborative development.</li>
-    </ul>
-    </section>
-    {/* Rare Task Manager ends */}
+      {/* Experience Section */}
+      <SectionTitle title="Professional Experience" />
+      <Experience
+        role="Into the Shadows — Unity Game Developer"
+        date="Jan 2025 - Present"
+        bullets={[
+          'Developed a first-person stealth game using Unity and C#.',
+          'Collaborated with a 3-member team using Kanban methodology.',
+          'Built core gameplay systems, AI behavior, and level design.',
+          'Integrated assets from both Unity Asset Store and custom models.',
+          'Packaged and deployed the game for WebGL and desktop platforms.',
+        ]}
+      />
+      <Experience
+        role="Money Man — Android Developer"
+        date="Aug 2024 – Dec 2024"
+        bullets={[
+          'Built a personal finance Android app for budgeting and expense tracking.',
+          'Worked in a 4-person team using Scrum methodology and JIRA.',
+          'Created frontend with XML and backend logic in Kotlin.',
+          'Integrated Firebase for cloud storage and authentication.',
+        ]}
+      />
+      <Experience
+        role="Rare Task Manager — Web Developer"
+        date="Aug 2024 - Dec 2024"
+        bullets={[
+          'Developed a web-based task manager using HTML, CSS, and JSON.',
+          'Led task categorization feature implementation.',
+          'Worked in a 5-person Scrum team with JIRA task management.',
+          'Managed version control via GitHub.',
+        ]}
+      />
+      <Experience
+        role="Illinois Secretary of State —  Public Service Representative"
+        date="Jun 2023 - Aug 2023"
+        bullets={[
+          'Processed guest appointments, ID validations, and registrations.',
+          'Provided professional, knowledgeable assistance to visitors.',
+          'Guided new representatives on proper workflow and procedures.',
+        ]}
+      />
 
-    {/* Public Service Representative begins */}
-    <section>
-    <h3>Public Service Representative - Illinois Secretary of State</h3>
-    <p><em>Jun 2023 - Aug 2023</em></p>
-    <ul>
-        <li>Handled clerical duties including appointment confirmation, ID validation, and guest registration into official systems.</li>
-        <li>Provided knowledgeable, courteous assistance to guests on service processes and documentation requirements.</li>
-        <li>Trained and guided new public service representatives on workflow and proper procedures.</li>
-    </ul>
-    </section>
-    {/* Public Service Representative ends */}
+      {/*Education */}
+      <SectionTitle title="Education" />
+      <div style={{ marginBottom: '2rem' }}>
+        <p>
+          <strong>Bachelor of Science — Computer Science</strong>
+          <br />
+          University of Illinois at Chicago (2021 - 2025)
+        </p>
+        <p>
+          <strong>High School Diploma</strong>
+          <br />
+          ITW David Speer Academy (2017 - 2021)
+        </p>
+      </div>
 
-    {/* Education begins */}
-      <h2>Education</h2>
-      <p>
-        <em><strong>Bachelor of Science</strong> - Major in Computer Science</em><br/>
-        University of Illinois at Chicago, 2021 - 2025
-
-        <em><br/><br/><strong>High School diploma</strong></em><br/>
-        ITW David Speer Academy, 2017 - 2021
-
-      </p>
-    {/* Education ends */}
-
-    {/* Skills begins */}
-      <h2>Skills</h2>
-      <ul>
-        <li>C++ / C </li>
-        <li>Python / PythonSQL </li>
-        <li>Java / JavaFX </li>
-        <li>F# </li>
-        <li>Ruby </li>
-        <li>Unity / C# </li>
-        <li>Kotlin / Android Studio </li>
-        <li>JavaScript / TypeScript</li>
-        <li>React / Next.js</li>
-        <li>HTML / CSS </li>
-        <li>Git / GitHub</li>
-        <li>Scrum methodology / Jira </li>
+      {/* Skills */}
+      <SectionTitle title="Skills" />
+      <ul
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+          gap: '0.5rem 1.5rem',
+          listStyle: 'none',
+          padding: 0,
+        }}
+      >
+        {[
+          'C / C++',
+          'Python / PythonSQL',
+          'Java / JavaFX',
+          'F#',
+          'Ruby',
+          'Unity / C#',
+          'Kotlin / Android Studio',
+          'JavaScript / TypeScript',
+          'React / Next.js',
+          'HTML / CSS',
+          'Git / GitHub',
+          'Scrum / Jira',
+        ].map((skill, idx) => (
+          <li
+            key={idx}
+            style={{
+              background: 'rgba(255, 255, 255, 0.08)',
+              padding: '0.5rem 0.75rem',
+              borderRadius: '6px',
+              textAlign: 'center',
+            }}
+          >
+            {skill}
+          </li>
+        ))}
       </ul>
-      {/* Skills ends */}
+
+      {/* Styles */}
+      <style>{`
+        @keyframes glowText {
+          0% { text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff; }
+          50% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+          100% { text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff; }
+        }
+
+        .download-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 0 20px #61dafb;
+        }
+      `}</style>
+    </section>
+  );
+}
+
+/* Title */
+function SectionTitle({ title }: { title: string }) {
+  return (
+    <h2
+      style={{
+        fontSize: '1.8rem',
+        marginTop: '3rem',
+        marginBottom: '1rem',
+        borderBottom: '2px solid #61dafb',
+        paddingBottom: '0.5rem',
+        letterSpacing: '1px',
+      }}
+    >
+      {title}
+    </h2>
+  );
+}
+
+/*Experience */
+function Experience({
+  role,
+  date,
+  bullets,
+}: {
+  role: string;
+  date: string;
+  bullets: string[];
+}) {
+  return (
+    <section style={{ marginBottom: '2rem' }}>
+      <h3 style={{ fontSize: '1.3rem', marginBottom: '0.25rem' }}>{role}</h3>
+      <p style={{ fontStyle: 'italic', color: '#aaa', marginBottom: '0.5rem' }}>
+        {date}
+      </p>
+      <ul style={{ paddingLeft: '1.2rem', margin: 0 }}>
+        {bullets.map((item, idx) => (
+          <li key={idx} style={{ marginBottom: '0.4rem' }}>
+            {item}
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
